@@ -3,50 +3,62 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>GitHub Pages 実験室</title>
+  <title>JavaScript実験室</title>
 
   <style>
     body {
-      background-color: #eaf4ff;
       font-family: sans-serif;
       text-align: center;
+      background-color: #eaf4ff;
       padding: 40px;
     }
 
     h1 {
       color: #1769aa;
-      font-size: 36px;
     }
 
-    p {
-      color: #ff4500;
+    #count {
+      font-size: 60px;
+      font-weight: bold;
+      margin: 30px;
+    }
+
+    button {
       font-size: 20px;
-      font-weight: bold; 
-    }
-
-    .message {
-      background-color: white;
-      padding: 25px;
-      border-radius: 15px;
-      max-width: 500px;
-      margin: 30px auto;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
     }
   </style>
 </head>
-  
+
 <body>
-  <h1>GitHub Pages 実験室</h1>
+  <h1>JavaScriptカウンター</h1>
 
-  <p id="message">ボタンを押してみよう！</p>
+  <div id="count">0</div>
 
-  <button id="changeButton">クリック！</button>
+  <button id="minus">−1</button>
+  <button id="reset">リセット</button>
+  <button id="plus">＋1</button>
 
   <script>
-    const button = document.getElementById("changeButton");
-    const message = document.getElementById("message");
+    let count = 0;
 
-    button.addEventListener("click", function() {
-      message.textContent = "JavaScriptが動いたよ！";
+    const countDisplay = document.getElementById("count");
+
+    document.getElementById("plus").addEventListener("click", function() {
+      count = count + 1;
+      countDisplay.textContent = count;
+    });
+
+    document.getElementById("minus").addEventListener("click", function() {
+      count = count - 1;
+      countDisplay.textContent = count;
+    });
+
+    document.getElementById("reset").addEventListener("click", function() {
+      count = 0;
+      countDisplay.textContent = count;
     });
   </script>
 </body>
