@@ -33,13 +33,21 @@
     }
   </style>
 </head>
-
+  
 <body>
   <h1>GitHub Pages 実験室</h1>
 
-  <div class="message">
-    <p>HTMLとCSSを使って、Webページを作っています！</p>
-    <p>自分の変更が世界に公開されるって面白いね。</p>
-  </div>
+  <p id="message">ボタンを押してみよう！</p>
+
+  <button id="changeButton">クリック！</button>
+
+  <script>
+    const button = document.getElementById("changeButton");
+    const message = document.getElementById("message");
+
+    button.addEventListener("click", function() {
+      message.textContent = "JavaScriptが動いたよ！";
+    });
+  </script>
 </body>
 </html>
